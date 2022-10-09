@@ -1,0 +1,12 @@
+<ng-container *ngIf="book">
+  <div class="preview"></div>
+  <div class="title">{{book.title}}</div>
+  <div class="author">{{book.author}}</div>
+  <div class="year">{{book.year}}</div>
+  <div class="genre">{{book.genre}}</div>
+  <div class="footer">
+    <div class="price">{{book.price}}</div>
+    <button tuiButton size="s">В корзину</button>
+  </div>
+</ng-container>
+

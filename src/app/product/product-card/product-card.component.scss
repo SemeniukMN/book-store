@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  width: 200px;
+}
+
+.preview {
+  height: 300px;
+  background: var(--tui-base-02);
+  margin-bottom: 6px;
+}
+
+.title {
+  font: var(--tui-font-text-m);
+  color: var(--tui-text-01);
+  font-weight: bold;
+}
+
+.author {
+  font: var(--tui-font-text-s);
+  color: var(--tui-link);
+  margin-bottom: 6px;
+}
+
+.year {
+  font: var(--tui-font-text-m);
+  color: var(--tui-text-01);
+}
+
+.genre {
+  font: var(--tui-font-text-s);
+  color: var(--tui-link);
+}
+
+.footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
