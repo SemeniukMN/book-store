@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "pageCount": {
+      "type": "integer"
+    },
+    "genre": {
+      "type": "enumeration",
+      "enum": [
+        "Детектив",
+        "Драма",
+        "Фантастика",
+        "Приключения",
+        "Роман",
+        "Научная книга",
+        "Фольклор",
+        "Поэзия"
+      ]
+    },
+    "coverType": {
+      "type": "enumeration",
+      "enum": [
+        "Твердый переплет",
+        "Мягкий переплет",
+        "Твердая обложка",
+        "Мягкая обложка"
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "books"
+    },
+    "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
