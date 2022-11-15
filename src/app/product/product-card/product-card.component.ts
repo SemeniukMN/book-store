@@ -3,12 +3,27 @@ import {CommonModule} from '@angular/common';
 import {TuiButtonModule} from '@taiga-ui/core';
 
 export interface Book {
-  title: string;
+  name: string;
   author: string;
   year: number;
   genre: string;
   price: number;
-  preview: string;
+  preview: Image;
+}
+
+export interface Image {
+  data: {
+    id: number;
+    attributes: {
+      name: string;
+      width: number;
+      height: number;
+      ext: string;
+      mime: string;
+      size: number;
+      url: string;
+    }
+  };
 }
 
 @Component({
@@ -21,14 +36,7 @@ export interface Book {
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() book: Book = {
-    author: 'Тереза дрисколл',
-    genre: 'Драмма',
-    preview: '',
-    price: 2000,
-    title: 'До самой смерти',
-    year: 2002
-  };
+  @Input() book?: Book;
 
   constructor() { }
 

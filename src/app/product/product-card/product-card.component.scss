@@ -1,6 +1,7 @@
 :host {
-  display: block;
+  display: flex;
   width: 200px;
+  flex-direction: column;
 }
 
 .preview {
@@ -33,6 +34,8 @@
 
 .footer {
   margin-top: 32px;
+  flex: 1;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }

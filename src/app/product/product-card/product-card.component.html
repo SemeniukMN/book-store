@@ -1,6 +1,6 @@
 <ng-container *ngIf="book">
-  <div class="preview"></div>
-  <div class="title">{{book.title}}</div>
+  <img class="preview" [src]="book.preview.data.attributes.url" alt="Preview">
+  <div class="title">{{book.name}}</div>
   <div class="author">{{book.author}}</div>
   <div class="year">{{book.year}}</div>
   <div class="genre">{{book.genre}}</div>

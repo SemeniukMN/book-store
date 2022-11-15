@@ -7,6 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ProductCardComponent} from './product/product-card/product-card.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ProductCardComponent} from './product/product-card/product-card.componen
         TuiRootModule,
         TuiDialogModule,
         TuiAlertModule,
-        ProductCardComponent
+        ProductCardComponent,
+        HttpClientModule
     ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
