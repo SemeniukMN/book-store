@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { ProductCardComponent } from '../product/product-card/product-card.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TuiInputModule } from '@taiga-ui/kit';
+import { TuiButtonModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +18,11 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     CommonModule,
     MainRoutingModule,
-    ProductCardComponent
+    ProductCardComponent,
+    TuiInputModule,
+    TuiButtonModule,
+    TuiTextfieldControllerModule,
+    FormsModule
   ]
 })
 export class MainModule { }

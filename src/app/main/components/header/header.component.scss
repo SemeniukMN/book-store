@@ -1,0 +1,13 @@
+header {
+  align-items: center;
+  border-bottom: 1px solid var(--tui-base-03);
+  display: flex;
+  height: 56px;
+  padding: 0 72px;
+  gap: 24px;
+}
+
+.search {
+  flex: 1;
+  max-width: 620px;
+}

@@ -1,0 +1,7 @@
+.books {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 200px;
+  grid-auto-flow: column;
+  grid-gap: 24px;
+}

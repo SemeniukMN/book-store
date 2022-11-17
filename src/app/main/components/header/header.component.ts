@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { SearchService } from '../../../services/search.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(readonly searchService: SearchService) {
+  }
 
   ngOnInit(): void {
   }

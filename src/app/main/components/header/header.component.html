@@ -1,0 +1,11 @@
+<header>
+  <img class="logo" src="assets/logo.svg" alt="Logo">
+  <div class="search">
+    <tui-input tuiTextfieldSize="s"
+               [ngModel]="searchService.query$|async"
+               (ngModelChange)="searchService.queryChange($event)"
+               (keydown.enter)="searchService.search()">
+      Поиск
+    </tui-input>
+  </div>
+</header>
