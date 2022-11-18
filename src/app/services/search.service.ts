@@ -12,7 +12,7 @@ export class SearchService {
 
   constructor() {
     this.searchQuery$ = this.search$.pipe(
-      startWith(() => this.query$.getValue()),
+      startWith(this.query$.getValue()),
       map(() => this.query$.getValue()),
       shareReplay({bufferSize: 1, refCount: true})
     );

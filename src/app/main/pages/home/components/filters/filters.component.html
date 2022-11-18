@@ -1,0 +1,35 @@
+<aside [formGroup]="form" tuiTextfieldSize="s">
+  <div class="header">Фильтры</div>
+  <label tuiLabel="Жанр">
+    <tui-multi-select formControlName="genres">
+      Выберите жанр
+      <tui-data-list-wrapper *tuiDataList [items]="genres"></tui-data-list-wrapper>
+    </tui-multi-select>
+  </label>
+  <label tuiLabel="Автор" appAuthorHandler>
+    <tui-multi-select formControlName="authors">
+      Выберите автора
+      <tui-data-list-wrapper *tuiDataList [items]="authors$|async"></tui-data-list-wrapper>
+    </tui-multi-select>
+  </label>
+  <label tuiLabel="Год издания">
+    <tui-multi-select formControlName="years">
+      Выберите год
+      <tui-data-list-wrapper *tuiDataList [items]="years"></tui-data-list-wrapper>
+    </tui-multi-select>
+  </label>
+  <label tuiLabel="Тип обложки">
+    <tui-multi-select formControlName="coverTypes">
+      Выберите тип
+      <tui-data-list-wrapper *tuiDataList [items]="coverTypes"></tui-data-list-wrapper>
+    </tui-multi-select>
+  </label>
+  <div class="buttons">
+    <button tuiButton size="s" (click)="apply()">
+      Применить
+    </button>
+    <button tuiButton size="s" appearance="secondary" (click)="reset()">
+      Сбросить
+    </button>
+  </div>
+</aside>

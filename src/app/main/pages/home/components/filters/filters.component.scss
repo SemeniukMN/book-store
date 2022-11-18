@@ -1,0 +1,22 @@
+aside {
+  padding: 24px 0 24px 36px;
+  border-left: 1px solid var(--tui-base-03);
+  height: 100%;
+  width: 260px;
+}
+
+.header {
+  font: var(--tui-font-text-xl);
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+label {
+  margin-bottom: 16px;
+}
+
+.buttons {
+  margin-top: 36px;
+  display: flex;
+  justify-content: space-between;
+}
