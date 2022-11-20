@@ -6,7 +6,7 @@ import { MainComponent } from './main.component';
 import { ProductCardComponent } from '../product/product-card/product-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TuiInputModule } from '@taiga-ui/kit';
-import { TuiButtonModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiSvgModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
 import { FormsModule } from '@angular/forms';
 
 
@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     TuiInputModule,
     TuiButtonModule,
     TuiTextfieldControllerModule,
-    FormsModule
+    FormsModule,
+    TuiSvgModule
   ]
 })
 export class MainModule { }

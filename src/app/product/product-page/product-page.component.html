@@ -1,0 +1,40 @@
+<div class="wrapper" *ngIf="book$|async as book">
+  <div class="info" *ngIf="book.attributes as attributes">
+    <img class="preview" [src]="attributes.preview.data.attributes.url" alt="Preview">
+    <div class="body">
+      <div class="title">{{attributes.name}}</div>
+      <div class="attributes">
+        <div class="attribute">
+          <div>Автор:</div>
+          <div>{{attributes.author | author}}</div>
+        </div>
+        <div class="attribute">
+          <div>Год издания:</div>
+          <div>{{attributes.year}}</div>
+        </div>
+        <div class="attribute">
+          <div>Жанр:</div>
+          <div>{{attributes.genre}}</div>
+        </div>
+        <div class="attribute">
+          <div>Кол-во страниц:</div>
+          <div>{{attributes.pageCount}}</div>
+        </div>
+        <div class="attribute">
+          <div>Тип обложки:</div>
+          <div>{{attributes.coverType}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <button tuiButton appearance="secondary">
+        <tui-svg src="tuiIconCardsLarge"></tui-svg>
+        <span class="price">{{attributes.price | tuiFormatNumber}}₽</span>
+      </button>
+    </div>
+  </div>
+  <div class="description">
+    <div class="description-title">Описание</div>
+    <div class="description-text">{{book.attributes.description}}</div>
+  </div>
+</div>

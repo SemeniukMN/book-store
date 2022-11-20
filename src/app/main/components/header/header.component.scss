@@ -11,3 +11,9 @@ header {
   flex: 1;
   max-width: 620px;
 }
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

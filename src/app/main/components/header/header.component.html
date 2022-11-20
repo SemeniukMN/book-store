@@ -1,11 +1,19 @@
 <header>
   <img class="logo" src="assets/logo.svg" alt="Logo">
-  <div class="search">
-    <tui-input tuiTextfieldSize="s"
-               [ngModel]="searchService.query$|async"
-               (ngModelChange)="searchService.queryChange($event)"
-               (keydown.enter)="searchService.search()">
-      Поиск
-    </tui-input>
+  <div class="back" *ngIf="back$|async as back else search">
+    <a tuiButton appearance="flat" size="xs" [routerLink]="back.url">
+      <tui-svg src="tuiIconArrowLeftLarge"></tui-svg>
+    </a>
+    {{back.title}}
   </div>
+  <ng-template #search>
+    <div class="search">
+      <tui-input tuiTextfieldSize="s"
+                 [ngModel]="searchService.query$|async"
+                 (ngModelChange)="searchService.queryChange($event)"
+                 (keydown.enter)="searchService.search()">
+        Поиск
+      </tui-input>
+    </div>
+  </ng-template>
 </header>

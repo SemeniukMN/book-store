@@ -6,10 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+    data: {title: 'Домашнаяя страница'},
     children: [
       {
         path: 'home',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'card',
+        loadChildren: () => import('../product/product-page/product-page.module').then(m => m.ProductPageModule),
+        data: {title: 'Страница товара'},
       },
       {
         path: '',

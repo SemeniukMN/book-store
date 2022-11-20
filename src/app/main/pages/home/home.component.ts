@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       this.filterService.filtersApplied$
     ]).pipe(
       switchMap(([query, filters]) => this.bookService.find(query, filters))).pipe(
-      map((response) => response.data.map(item => item.attributes)),
+      map((response) => response.data.map(item => ({...item.attributes, id: item.id}))),
     );
   }
 

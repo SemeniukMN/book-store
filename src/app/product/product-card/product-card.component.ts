@@ -1,10 +1,21 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {TuiButtonModule} from '@taiga-ui/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TuiButtonModule } from '@taiga-ui/core';
+import { RouterLink } from '@angular/router';
+import { SinglePage } from '../../types/page';
+import { Author } from '../../types/author';
+import { AuthorPipe } from '../../pipes/author.pipe';
 
-export interface Book {
+export interface Book extends BookAttributes {
+  id: string;
+}
+
+export interface BookAttributes {
+  description: string;
+  coverType: string;
+  pageCount: string;
   name: string;
-  author: string;
+  author: SinglePage<Author>;
   year: number;
   genre: string;
   price: number;
@@ -29,7 +40,7 @@ export interface Image {
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, TuiButtonModule],
+  imports: [CommonModule, TuiButtonModule, RouterLink, AuthorPipe],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

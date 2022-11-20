@@ -14,3 +14,8 @@ export interface PageItem<T> {
   id: string;
   attributes: T;
 }
+
+export interface SinglePage<T> {
+  data: PageItem<T>;
+  meta: {};
+}

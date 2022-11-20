@@ -1,7 +1,7 @@
 <ng-container *ngIf="book">
-  <img class="preview" [src]="book.preview.data.attributes.url" alt="Preview">
+  <img class="preview" [src]="book.preview.data.attributes.url" alt="Preview" routerLink="/card/{{book.id}}">
   <div class="title">{{book.name}}</div>
-  <div class="author">{{book.author}}</div>
+  <div class="author">{{book.author | author}}</div>
   <div class="year">{{book.year}}</div>
   <div class="genre">{{book.genre}}</div>
   <div class="footer">

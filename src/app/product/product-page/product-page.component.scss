@@ -1,0 +1,61 @@
+:host {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 1024px;
+  flex: 1;
+}
+
+.info {
+  display: flex;
+
+  .title {
+    font: var(--tui-font-heading-4);
+    margin-bottom: 32px;
+  }
+
+  .preview {
+    margin-right: 64px;
+    width: 200px;
+    height: 300px;
+  }
+
+  .body {
+    margin-right: 64px;
+
+    .attribute {
+      display: flex;
+      font: var(--tui-font-text-m);
+      margin-bottom: 16px;
+
+      & > div:first-child {
+        width: 124px;
+        color: var(--tui-text-02);
+      }
+      & > div:last-child {
+        flex: 1;
+      }
+    }
+  }
+
+  .button {
+    margin-left: auto;
+
+    .price {
+      font: var(--tui-font-text-xl);
+      margin-left: 16px;
+    }
+  }
+}
+
+.description {
+  margin-top: 32px;
+  &-title {
+    font: var(--tui-font-text-l);
+    color: var(--tui-text-02);
+    margin-bottom: 16px;
+  }
+}
