@@ -5,8 +5,13 @@
   <div class="year">{{book.year}}</div>
   <div class="genre">{{book.genre}}</div>
   <div class="footer">
-    <div class="price">{{book.price}}</div>
-    <button tuiButton size="s">В корзину</button>
+    <div class="price">{{book.price|tuiFormatNumber}}₽</div>
+    <ng-container *ngIf="set.has(book.id) else adding">
+      <button tuiButton size="s" appearance="secondary" (click)="remove(book.id)">Убрать</button>
+    </ng-container>
+    <ng-template #adding>
+      <button tuiButton size="s" (click)="add(book.id)">В корзину</button>
+    </ng-template>
   </div>
 </ng-container>
 

@@ -18,10 +18,11 @@ header {
   gap: 8px;
 }
 
-.user {
+.buttons {
   margin-left: auto;
   font-weight: bold;
   color: var(--tui-primary);
   display: flex;
   align-items: center;
+  gap: 8px;
 }

@@ -1,0 +1,78 @@
+
+h1 {
+  font: var(--tui-font-heading-4);
+}
+
+main {
+  margin-bottom: 24px;
+}
+
+.empty {
+  color: var(--tui-text-02);
+}
+
+.book {
+  padding: 12px 0;
+  display: flex;
+  border-top: 1px solid var(--tui-base-03);
+
+  &:last-child {
+    border-bottom: 1px solid var(--tui-base-03);
+  }
+
+  &-preview {
+    width: 100px;
+    height: 150px;
+    margin-right: 24px;
+  }
+
+  &-info {
+    flex: 1;
+  }
+
+  &-header {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 24px;
+
+    .title {
+      font: var(--tui-font-text-xl);
+      font-weight: bold;
+      margin-right: auto;
+    }
+
+    .price {
+      font: var(--tui-font-text-xl);
+      font-weight: bold;
+      color: var(--tui-primary);
+    }
+  }
+
+  &-attrs {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .attribute {
+      display: flex;
+      margin-bottom: 16px;
+      & > div:first-child {
+        color: var(--tui-text-02);
+        width: 130px;
+      }
+    }
+  }
+
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  .cost {
+    font: var(--tui-font-text-xl);
+    font-weight: bold;
+    color: var(--tui-primary);
+    margin-bottom: 24px;
+  }
+}

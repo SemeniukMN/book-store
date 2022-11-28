@@ -31,6 +31,12 @@
   color: var(--tui-link);
 }
 
+.price {
+  font: var(--tui-font-text-xl);
+  color: var(--tui-primary);
+  font-weight: bold;
+}
+
 .footer {
   margin-top: 32px;
   flex: 1;

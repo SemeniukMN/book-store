@@ -20,6 +20,13 @@ export class BookService {
 
   }
 
+  findByIds(ids: string[]): Observable<Page<BookAttributes>> {
+    const params = this.params.appendAll({
+      ['filters[id][$in]']: ids || [],
+    });
+    return this.http.get<Page<BookAttributes>>(this.url, {params});
+  }
+
   find(query: string, filters: BookFilters) {
     const params = this.params.appendAll({
       ['filters[name][$contains]']: query,

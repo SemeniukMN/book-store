@@ -19,6 +19,11 @@ const routes: Routes = [
         data: {title: 'Страница товара'},
       },
       {
+        path: 'cart',
+        loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule),
+        data: {title: 'Корзина'},
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'home'

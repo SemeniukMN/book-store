@@ -1,0 +1,40 @@
+<h1>Корзина</h1>
+<main>
+  <div class="book" *ngFor="let book of books$|async">
+    <img class="book-preview" [src]="book.preview.data.attributes.url" alt="Preview" routerLink="/card/{{book.id}}">
+    <div class="book-info">
+      <div class="book-header">
+        <div class="title">{{book.name}}</div>
+        <div class="price">{{book.price | tuiFormatNumber}}₽</div>
+        <button tuiIconButton size="s" icon="tuiIconTrashLarge" appearance="secondary" (click)="remove(book.id)"></button>
+      </div>
+      <div class="book-attrs">
+        <div class="attribute">
+          <div>Автор:</div>
+          <div>{{book.author | author}}</div>
+        </div>
+        <div class="attribute">
+          <div>Жанр:</div>
+          <div>{{book.genre}}</div>
+        </div>
+        <div class="attribute">
+          <div>Год издания:</div>
+          <div>{{book.year}}</div>
+        </div>
+        <div class="attribute">
+          <div>Кол-во страниц:</div>
+          <div>{{book.pageCount}}</div>
+        </div>
+        <div class="attribute">
+          <div>Тип обложки:</div>
+          <div>{{book.coverType}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="empty" *ngIf="!(books$|async)?.length">В корзине нет элементов</div>
+</main>
+<footer *ngIf="(cost$|async) as cost">
+  <div class="cost">Итого {{cost|tuiFormatNumber}}₽</div>
+  <button tuiButton>Оформить заказ</button>
+</footer>

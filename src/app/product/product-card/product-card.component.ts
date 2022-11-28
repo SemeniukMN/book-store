@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TuiButtonModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiFormatNumberPipeModule } from '@taiga-ui/core';
 import { RouterLink } from '@angular/router';
 import { SinglePage } from '../../types/page';
 import { Author } from '../../types/author';
 import { AuthorPipe } from '../../pipes/author.pipe';
+import { CartService } from '../../services/cart.service';
 
 export interface Book extends BookAttributes {
   id: string;
@@ -40,7 +41,7 @@ export interface Image {
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, TuiButtonModule, RouterLink, AuthorPipe],
+  imports: [CommonModule, TuiButtonModule, RouterLink, AuthorPipe, TuiFormatNumberPipeModule],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -49,9 +50,24 @@ export class ProductCardComponent implements OnInit {
 
   @Input() book?: Book;
 
-  constructor() { }
+  readonly set: Set<any>;
 
-  ngOnInit(): void {
+  constructor(private readonly cartService: CartService,
+              private readonly cdRef: ChangeDetectorRef) {
+    this.set = this.cartService.productSet;
   }
 
+  ngOnInit(): void {
+    this.cartService.productIds$.subscribe(() => {
+      this.cdRef.markForCheck();
+    });
+  }
+
+  add(id: string) {
+    this.cartService.add(id);
+  }
+
+  remove(id: string) {
+    this.cartService.remove(id);
+  }
 }
