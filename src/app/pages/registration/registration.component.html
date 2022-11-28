@@ -1,0 +1,14 @@
+<div class="registration">
+  <div class="logo">
+    <img src="assets/logo-l.svg" alt="Logo">
+  </div>
+  <form [formGroup]="form" tuiTextfieldSize="s" (ngSubmit)="submit()">
+    <tui-input formControlName="firstName">Имя</tui-input>
+    <tui-input formControlName="lastName">Фамилия</tui-input>
+    <tui-input formControlName="middleName">Отчество</tui-input>
+    <tui-input formControlName="email">Почта</tui-input>
+    <tui-input-password formControlName="password">Пароль</tui-input-password>
+    <tui-input-password formControlName="passwordClone">Повторите пароль</tui-input-password>
+    <button tuiButton size="s">Зарегистрировать</button>
+  </form>
+</div>

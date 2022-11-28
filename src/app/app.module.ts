@@ -7,7 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductCardComponent } from './product/product-card/product-card.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { MainModule } from './layout/main/main.module';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,14 @@ import { HttpClientModule } from '@angular/common/http';
     TuiDialogModule,
     TuiAlertModule,
     ProductCardComponent,
-    HttpClientModule
+    HttpClientXsrfModule.withOptions({cookieName: 'jwt_token'}),
+    HttpClientModule,
+    MainModule
   ],
-  providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
+  providers: [
+    {provide: TUI_SANITIZER, useClass: NgDompurifySanitizer},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

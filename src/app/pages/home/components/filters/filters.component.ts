@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
-import { AuthorService } from '../../../../../services/author.service';
+import { AuthorService } from '../../../../services/author.service';
 import { map, Observable, Subject, takeUntil } from 'rxjs';
-import { Author } from '../../../../../types/author';
+import { Author } from '../../../../types/author';
 import { FormControl, FormGroup } from '@angular/forms';
-import { FilterService } from '../../../../../services/filter.service';
-import { PageItem } from '../../../../../types/page';
+import { FilterService } from '../../../../services/filter.service';
+import { PageItem } from '../../../../types/page';
 
 @Component({
   selector: 'app-filters',

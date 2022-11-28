@@ -1,10 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './layout/main/main.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
+    component: MainComponent,
+    data: {title: 'Домашнаяя страница'},
+    children: [
+      {
+        path: 'home',
+        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'card',
+        loadChildren: () => import('./product/product-page/product-page.module').then(m => m.ProductPageModule),
+        data: {title: 'Страница товара'},
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+      }
+    ]
+  },
+  {
+    path: 'registration',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/registration/registration.module').then(m => m.RegistrationModule)
+  },
+  {
+    path: 'login',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
   }
 ];
 

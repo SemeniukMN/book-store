@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { ProductCardComponent } from '../../../product/product-card/product-card.component';
+import { ProductCardComponent } from '../../product/product-card/product-card.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import {
   TuiDataListWrapperModule,

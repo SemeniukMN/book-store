@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.registration {
+  width: 320px;
+  margin-top: -112px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+tui-input,
+tui-input-password {
+  margin-bottom: 24px;
+}
+
+button {
+  width: 100%;
+}

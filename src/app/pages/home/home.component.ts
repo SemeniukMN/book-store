@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { BookService } from '../../../services/book.service';
+import { BookService } from '../../services/book.service';
 import { combineLatest, map, Observable, switchMap } from 'rxjs';
-import { Book } from '../../../product/product-card/product-card.component';
-import { SearchService } from '../../../services/search.service';
-import { FilterService } from '../../../services/filter.service';
+import { Book } from '../../product/product-card/product-card.component';
+import { SearchService } from '../../services/search.service';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-home',

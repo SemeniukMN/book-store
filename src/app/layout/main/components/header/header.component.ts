@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { SearchService } from '../../../services/search.service';
+import { SearchService } from '../../../../services/search.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, Observable, startWith } from 'rxjs';
+import { AuthService } from '../../../../services/auth.service';
+import { User } from '../../../../types/user';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +14,13 @@ import { filter, map, Observable, startWith } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   readonly back$: Observable<{title: string, url: string} | null>;
+  readonly user$: Observable<User | null>;
 
   constructor(readonly searchService: SearchService,
               private readonly router: Router,
+              private readonly authService: AuthService,
               private readonly route: ActivatedRoute) {
+    this.user$ = this.authService.currentUser();
     this.back$ = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
       startWith(this.route),
@@ -37,4 +42,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }

@@ -16,4 +16,13 @@
       </tui-input>
     </div>
   </ng-template>
+  <div class="user">
+    <ng-container *ngIf="user$|async as user else login">
+      <a tuiButton size="m" appearance="flat" routerLink="/account">{{user.firstName}}</a>
+      <button tuiIconButton size="s" icon="tuiIconLogoutLarge" appearance="flat" (click)="logout()"></button>
+    </ng-container>
+    <ng-template #login>
+      <a tuiIconButton size="s" icon="tuiIconLoginLarge" appearance="flat" routerLink="/login" [skipLocationChange]="true"></a>
+    </ng-template>
+  </div>
 </header>

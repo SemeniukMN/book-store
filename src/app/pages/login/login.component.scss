@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login {
+  width: 320px;
+  margin-top: -112px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+tui-input,
+tui-input-password {
+  margin-bottom: 24px;
+}
+
+form {
+  margin-bottom: 40px;
+}
+
+button {
+  width: 100%;
+}
+
+.or {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: var(--tui-text-03);
+  margin: 8px 0;
+  &::before, &::after {
+    content: '';
+    display: block;
+    height: 1px;
+    flex: 1;
+    background: var(--tui-base-03);
+  }
+}

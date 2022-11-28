@@ -1,0 +1,12 @@
+<div class="login">
+  <div class="logo">
+    <img src="assets/logo-l.svg" alt="Logo">
+  </div>
+  <form [formGroup]="form" tuiTextfieldSize="s">
+    <tui-input formControlName="identifier">Логин</tui-input>
+    <tui-input-password formControlName="password">Пароль</tui-input-password>
+  </form>
+  <button tuiButton size="s" (click)="submit()">Войти</button>
+  <div class="or">или</div>
+  <button tuiButton size="s" appearance="outline" routerLink="/registration" [skipLocationChange]="true">Зарегистрироваться</button>
+</div>
