@@ -24,6 +24,11 @@ const routes: Routes = [
         data: {title: 'Корзина'},
       },
       {
+        path: 'order',
+        loadChildren: () => import('./pages/order/order.module').then(m => m.OrderModule),
+        data: {title: 'Оформление заказа'},
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'home'
@@ -46,4 +51,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

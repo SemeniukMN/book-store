@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductCardComponent } from './product/product-card/product-card.component';
-import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MainModule } from './layout/main/main.module';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 
@@ -23,7 +23,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     TuiDialogModule,
     TuiAlertModule,
     ProductCardComponent,
-    HttpClientXsrfModule.withOptions({cookieName: 'jwt_token'}),
     HttpClientModule,
     MainModule
   ],

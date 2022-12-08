@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "deliveryDate": {
+      "type": "date"
+    },
+    "email": {
+      "type": "email"
+    },
+    "region": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "pay": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "card"
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+h1 {
+  font: var(--tui-font-heading-4);
+}
+
+h2 {
+  font: var(--tui-font-heading-5);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 528px 460px;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  grid-gap: 24px 56px;
+}
+
+.order {
+  grid-row: 1 / span 3;
+}
+
+.pay {
+  position: relative;
+}
+
+tui-input,
+tui-radio-labeled {
+  margin-bottom: 16px;
+}
+
+button {
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+}
+
+.book {
+  padding: 16px;
+  display: flex;
+  gap: 24px;
+  border-top: 1px solid var(--tui-base-03);
+
+  &:last-child {
+    border-bottom: 1px solid var(--tui-base-03);
+  }
+
+  &-preview {
+    width: 40px;
+    height: 60px;
+  }
+
+  &-info {
+    flex: 1;
+  }
+
+  &-title {
+    font: var(--tui-font-text-xl);
+    font-weight: bold;
+    margin-right: auto;
+  }
+
+  &-price {
+    font: var(--tui-font-text-xl);
+    font-weight: bold;
+    color: var(--tui-primary);
+  }
+
+}
+
+.cost {
+  font: var(--tui-font-text-xl);
+  font-weight: bold;
+  color: var(--tui-primary);
+  text-align: right;
+  padding: 16px;
+}

@@ -1,0 +1,41 @@
+<h1>Оформление заказа</h1>
+<main [formGroup]="form">
+  <div class="user">
+    <h2>Данные покупателя</h2>
+    <tui-input formControlName="lastName">Фамилия</tui-input>
+    <tui-input formControlName="firstName">Имя</tui-input>
+    <tui-input formControlName="middleName">Отчество</tui-input>
+    <tui-input formControlName="email">Почта</tui-input>
+  </div>
+  <div class="delivery">
+    <h2>Доставка</h2>
+    <tui-input formControlName="region">Регион</tui-input>
+    <tui-input formControlName="city">Город</tui-input>
+    <tui-input formControlName="address">Улица, дом, квартира</tui-input>
+    <tui-input-date formControlName="deliveryDate" [min]="minDeliveryDate">Дата доставки</tui-input-date>
+  </div>
+  <div class="pay">
+    <h2>Способ оплаты</h2>
+    <tui-radio-labeled formControlName="pay" size="l" [item]="'cash'">
+      Наличными при получении
+    </tui-radio-labeled>
+    <tui-radio-labeled formControlName="pay" size="l" [item]="'card'">
+      Картой курьеру
+    </tui-radio-labeled>
+    <button tuiButton (click)="submit()">Заказать</button>
+  </div>
+  <div class="order">
+    <h2>Состав заказа</h2>
+    <div>
+      <div class="book" *ngFor="let book of books$|async">
+        <img class="book-preview" [src]="book.preview.data.attributes.url" alt="Preview" routerLink="/card/{{book.id}}">
+        <div class="book-info">
+          <div class="book-title">{{book.name}}</div>
+          <div class="book-author">{{book.author | author}}</div>
+        </div>
+        <div class="book-price">{{book.price | tuiFormatNumber}}₽</div>
+      </div>
+    </div>
+    <div class="cost" *ngIf="cost$|async as cost">{{cost|tuiFormatNumber}}₽</div>
+  </div>
+</main>

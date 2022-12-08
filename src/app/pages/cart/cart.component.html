@@ -36,5 +36,5 @@
 </main>
 <footer *ngIf="(cost$|async) as cost">
   <div class="cost">Итого {{cost|tuiFormatNumber}}₽</div>
-  <button tuiButton>Оформить заказ</button>
+  <a tuiButton [routerLink]="['/order']">Оформить заказ</a>
 </footer>
