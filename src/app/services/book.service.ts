@@ -20,7 +20,7 @@ export class BookService {
 
   }
 
-  findByIds(ids: string[]): Observable<Page<BookAttributes>> {
+  findByIds(ids: number[]): Observable<Page<BookAttributes>> {
     const params = this.params.appendAll({
       ['filters[id][$in]']: ids || [],
     });

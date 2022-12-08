@@ -29,6 +29,11 @@ const routes: Routes = [
         data: {title: 'Оформление заказа'},
       },
       {
+        path: 'account',
+        loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule),
+        data: {title: 'Личный кабинет'},
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'home'

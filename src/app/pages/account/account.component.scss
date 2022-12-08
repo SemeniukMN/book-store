@@ -1,0 +1,64 @@
+
+.user {
+  display: flex;
+  margin-top: 48px;
+  margin-bottom: 40px;
+
+  .avatar {
+    width: 152px;
+    height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid var(--tui-primary);
+    color: var(--tui-primary);
+    font: var(--tui-font-heading-1);
+    border-radius: 50%;
+    margin-right: 40px;
+  }
+
+  .attribute {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    & > div:first-child {
+      color: var(--tui-text-02);
+      width: 120px;
+      &::after {
+        content: ':';
+        display: inline;
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  max-width: 1240px;
+
+  th, td {
+    padding: 8px;
+    font: var(--tui-font-text);
+    font-weight: 400;
+    vertical-align: top;
+    text-align: left;
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--tui-base-03);
+    }
+  }
+
+  th {
+    color: var(--tui-text-02);
+    border-bottom: 2px solid var(--tui-primary);
+  }
+
+  td {
+    border-bottom: 1px solid var(--tui-base-03);
+  }
+}
+
+tui-tag {
+  margin-left: 8px;
+}

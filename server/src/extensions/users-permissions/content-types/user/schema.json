@@ -71,9 +71,6 @@
     },
     "middleName": {
       "type": "string"
-    },
-    "products": {
-      "type": "json"
     }
   }
 }

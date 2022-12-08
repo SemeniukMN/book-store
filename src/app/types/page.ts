@@ -11,7 +11,7 @@ export interface Page<T> {
 }
 
 export interface PageItem<T> {
-  id: string;
+  id: number;
   attributes: T;
 }
 

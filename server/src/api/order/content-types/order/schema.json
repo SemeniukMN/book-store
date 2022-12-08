@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Order"
+    "displayName": "Order",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -41,6 +42,9 @@
         "cash",
         "card"
       ]
+    },
+    "products": {
+      "type": "json"
     }
   }
 }

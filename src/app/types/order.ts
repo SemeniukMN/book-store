@@ -9,5 +9,5 @@ export interface Order {
   address: string;
   deliveryDate: string;
   pay: string;
-  products: {id: string, price: number}[];
+  products: {id: number, price: number}[];
 }

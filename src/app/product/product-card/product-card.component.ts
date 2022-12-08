@@ -8,7 +8,7 @@ import { AuthorPipe } from '../../pipes/author.pipe';
 import { CartService } from '../../services/cart.service';
 
 export interface Book extends BookAttributes {
-  id: string;
+  id: number;
 }
 
 export interface BookAttributes {
@@ -63,11 +63,11 @@ export class ProductCardComponent implements OnInit {
     });
   }
 
-  add(id: string) {
+  add(id: number) {
     this.cartService.add(id);
   }
 
-  remove(id: string) {
+  remove(id: number) {
     this.cartService.remove(id);
   }
 }

@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CartService {
 
-  readonly productIds$ = new BehaviorSubject<string[]>([]);
+  readonly productIds$ = new BehaviorSubject<number[]>([]);
   readonly productSet = new Set();
 
   constructor() {
@@ -21,13 +21,13 @@ export class CartService {
     });
   }
 
-  add(id: string) {
+  add(id: number) {
     const productIds = this.productIds$.getValue();
     productIds.push(id);
     this.productIds$.next(productIds);
   }
 
-  remove(id: string) {
+  remove(id: number) {
     const productIds = this.productIds$.getValue();
     this.productIds$.next(productIds.filter(productId => productId !== id));
   }

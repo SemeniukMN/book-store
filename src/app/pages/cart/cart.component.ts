@@ -28,7 +28,7 @@ export class CartComponent {
     );
   }
 
-  remove(id: string) {
+  remove(id: number) {
     this.cartService.remove(id);
   }
 }

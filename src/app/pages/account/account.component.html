@@ -1,0 +1,52 @@
+<div class="user" *ngIf="user$|async as user">
+  <div class="avatar">
+    {{user.lastName[0]}}{{user.firstName[0]}}
+  </div>
+  <div class="user-info">
+    <div class="attribute">
+      <div>Фамилия</div>
+      <div>{{user.lastName}}</div>
+    </div>
+    <div class="attribute">
+      <div>Имя</div>
+      <div>{{user.firstName}}</div>
+    </div>
+    <div class="attribute">
+      <div>Отчество</div>
+      <div>{{user.middleName}}</div>
+    </div>
+    <div class="attribute">
+      <div>Почта</div>
+      <div>{{user.email}}</div>
+    </div>
+  </div>
+</div>
+<h2>История заказов</h2>
+<table>
+  <thead>
+  <tr>
+    <th>№ Заказа</th>
+    <th>Регион</th>
+    <th>Город</th>
+    <th>Улица, дом, квартира</th>
+    <th>Дата</th>
+    <th>Сумма</th>
+    <th>Книги</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of orders$|async">
+    <td>{{order.id}}</td>
+    <td>{{order.region}}</td>
+    <td>{{order.city}}</td>
+    <td>{{order.address}}</td>
+    <td>{{order.deliveryDate}}</td>
+    <td>{{order.cost|tuiFormatNumber}}₽</td>
+    <td>
+      <div *ngFor="let book of order.items">
+        {{book.name}} <tui-tag status="primary" value="{{book.price|tuiFormatNumber}}₽"></tui-tag>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
